@@ -14,6 +14,7 @@ namespace Proyecto_Safeparty.Controllers
         }
 
         // hola mundo soy daniel
+        //Hola soy Alfredo
 
         public IActionResult Index()
         {
