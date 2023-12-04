@@ -13,6 +13,8 @@ namespace Proyecto_Safeparty.Controllers
             _logger = logger;
         }
 
+        // hola mundo soy daniel
+
         public IActionResult Index()
         {
             return View();
