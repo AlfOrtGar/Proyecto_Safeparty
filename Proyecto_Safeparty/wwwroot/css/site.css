@@ -4,6 +4,13 @@ html {
   font-size: 10px;
 }
 
+@font-face {
+    font-family: 'LeagueSpartanBold';
+    src: url('../fonts/league-spartan/LeagueSpartan-Bold.otf') format('embedded-opentype')
+    /* Agrega otros formatos de fuente según sea necesario */
+    font-weight: normal;
+    font-style: normal;
+}
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -13,9 +20,45 @@ html {
 html {
   position: relative;
   min-height: 100%;
-  background-color: aqua;
+}
+
+h1#titulo {
+    font-family: LeagueSpartanBold;
+    font-size: 40px;
 }
 
 body {
-  margin-bottom: 60px;
+    background: linear-gradient(45deg, #f562da, #5d0296);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.card {
+    transition: transform 0.5s;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+.btn-group {
+    margin-top: 20px;
 }

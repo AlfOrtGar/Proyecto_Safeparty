@@ -2,7 +2,41 @@
     ViewData["Title"] = "Página de registro";
 }
 
-<div class="text-center">
-    <h1 class="display-4"> Bienvenido a Safeparty </h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Página de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="titulo"> Bienvenido a Safeparty </h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Registro</h2>
+                        <div class="btn-group btn-block">
+                            <button class="btn btn-primary" onclick="showLogin()">Ya tengo una cuenta</button>
+                            <button class="btn btn-secondary" onclick="showSignup()">Crear una nueva cuenta</button>
+                        </div>
+                        <form id="loginForm">
+                            <!-- Campos de inicio de sesión aquí -->
+                        </form>
+                        <form id="signupForm" style="display: none;">
+                            <!-- Campos de registro aquí -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
