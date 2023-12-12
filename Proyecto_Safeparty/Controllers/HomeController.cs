@@ -13,6 +13,7 @@ namespace Proyecto_Safeparty.Controllers
             _logger = logger;
         }
 
+        // --- Vistas -------------------------------------------------------------
         public IActionResult Index()
         {
             return View();
@@ -22,6 +23,43 @@ namespace Proyecto_Safeparty.Controllers
         {
             return View();
         }
+
+        public IActionResult Configuracion()
+        {
+            return View();
+        }
+
+        public IActionResult Home()
+        {
+            return View();
+        }
+
+        public IActionResult Mapa()
+        {
+            return View();
+        }
+
+        public IActionResult Registro()
+        {
+            return View();
+        }
+
+        public IActionResult Prueba1()
+        {
+            return View();
+        }
+
+        public IActionResult Prueba2()
+        {
+            return View();
+        }
+
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+
+        // --- FIN Vistas ---------------------------------------------------------
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
