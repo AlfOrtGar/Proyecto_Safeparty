@@ -16,6 +16,7 @@ namespace Proyecto_Safeparty.Controllers
         // --- Vistas -------------------------------------------------------------
         public IActionResult Index()
         {
+            //LLamada a modelo
             return View();
         }
 
