@@ -5,14 +5,23 @@ html {
 }
 
 @font-face {
-    font-family: 'LeagueSpartanBold';
-    src: url('../fonts/league-spartan/LeagueSpartan-Bold.otf') format('embedded-opentype')
-    /* Agrega otros formatos de fuente según sea necesario */
-    font-weight: normal;
-    font-style: normal;
+    font-family: "Bagnard";
+    src: url("https://github.com/sebsan/Bagnard/blob/master/Bagnard.otf");
 }
+
+@font-face {
+    font-family: "CooperhewittLightItalic";
+    src: url("https://github.com/cooperhewitt/cooperhewitt-typeface/tree/master/files/CooperHewitt-LightItalic.ufo");
+}
+
+@font-face {
+    font-family: "CooperhewittBold";
+    src: url("https://github.com/cooperhewitt/cooperhewitt-typeface/tree/master/files/CooperHewitt-Bold.ufo");
+}
+
+
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }
@@ -22,17 +31,15 @@ html {
   min-height: 100%;
 }
 
-h1#titulo {
-    font-family: LeagueSpartanBold;
-    font-size: 40px;
-}
-
 body {
     background: linear-gradient(45deg, #f562da, #5d0296);
     background-size: 400% 400%;
-    animation: gradientAnimation 15s infinite;
+    animation: gradientAnimation 60s infinite;
 }
 
+/* 
+     ANIMACIÓN EN EL FONDO
+*/
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -62,3 +69,6 @@ body {
 .btn-group {
     margin-top: 20px;
 }
+/*
+    OTRAS COSAS
+*/

@@ -8,31 +8,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Página de Registro</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="~/css/index.css" />
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="styles.css"  <!-- común -->
+    <link rel="stylesheet" href="~/css/index.css" /> <!-- específico -->
+    <link rel="icon" href="~/lib/favicon_io/favicon-32x32.png" type="image/x-icon">
     <script src="scripts.js" defer></script>
 </head>
 <body>
 
     <div class="container">
-        <h1 id="titulo"> Bienvenido a Safeparty </h1>
+        <h1 class="titulo"> Bienvenido a Safeparty </h1>
+        <h3 class="subtituloA" id="uno"> Encárgate de</h3>
+        <h2 class="subtituloB" id="dos"> dsifrutar</h2>
+        <h3 class="subtituloA" id="tres"> nosotros hacemos el</h3>
+        <h2 class="subtituloB" id="cuatro"> resto </h2>
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="text-center mb-4">Registro</h2>
-                        <div class="btn-group btn-block">
-                            <button class="btn btn-primary" onclick="showLogin()">Ya tengo una cuenta</button>
-                            <button class="btn btn-secondary" onclick="showSignup()">Crear una nueva cuenta</button>
-                        </div>
-                        <form id="loginForm">
-                            <!-- Campos de inicio de sesión aquí -->
-                        </form>
-                        <form id="signupForm" style="display: none;">
-                            <!-- Campos de registro aquí -->
-                        </form>
-                    </div>
-                </div>
+                <button role="button"><h3> Ya tengo una cuenta</h3> </button>
+                <button role="button"> Crear una nueva cuenta</button>
             </div>
         </div>
     </div>
