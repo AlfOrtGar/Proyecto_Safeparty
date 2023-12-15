@@ -126,7 +126,6 @@ namespace Proyecto_Safeparty.Controllers
         {
             String mensaje = "";
             var conexion = new MySql.Data.MySqlClient.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-            String MySQLQuery = "SELECT @campo FROM usuarios_sf WHERE @campo = '@valor' LIMIT 1;";
 
             if (string.IsNullOrWhiteSpace(usuario.nombre))
                 mensaje += "Por favor introduzca un nombre. ";
@@ -144,10 +143,11 @@ namespace Proyecto_Safeparty.Controllers
                 try
                 {
                     usuario.username.Trim();
+                    String MySQLQuery = "SELECT username FROM usuarios_sf WHERE username = @valor";
                     using (var consulta = new MySqlCommand(MySQLQuery, conexion))
                     {
                         conexion.Open();
-                        consulta.Parameters.Add(new MySqlParameter("campo", "username"));
+                        
                         consulta.Parameters.Add(new MySqlParameter("valor", usuario.username));
 
                         if (consulta.ExecuteScalar() != null)
@@ -170,10 +170,11 @@ namespace Proyecto_Safeparty.Controllers
                 try
                 {
                     usuario.email.Trim();
+                    String MySQLQuery = "SELECT email FROM usuarios_sf WHERE email = @valor";
                     using (var consulta = new MySqlCommand(MySQLQuery, conexion))
                     {
                         conexion.Open();
-                        consulta.Parameters.Add(new MySqlParameter("campo", "email"));
+
                         consulta.Parameters.Add(new MySqlParameter("valor", usuario.email));
 
                         if (consulta.ExecuteScalar() != null)
