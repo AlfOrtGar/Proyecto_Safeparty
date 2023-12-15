@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form action="@Url.Action("Registro","Acceso")" method="POST">
+
+        <label>Nombre</label>
+        <input type="text" name="nombre" required/>
+
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" required/>
+
+        <label>Fecha de nacimiento</label>
+        <input type="date" name="fecha_nacimiento" required/>
+
+        <label>Genero</label>
+        <input type="text" name="genero" required/>
+
+        <label>Username</label>
+        <input type="text" name="username" required/>
+
+        <label>Password</label>
+        <input type="password" name="password" required/>
+
+        <label>Email</label>
+        <input type="text" name="email" required/>
+
+        <button type="submit">Registra</button>
+    </form>
+</body>
+</html>
