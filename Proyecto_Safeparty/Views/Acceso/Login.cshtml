@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form action="@Url.Action("Login","Acceso")" method="POST">
+        <label>Username</label>
+        <input type="text" name="username"/>
+
+        <label>Password</label>
+        <input type="password" name="password"/>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="alert alert-danger" role="alert">
+        @ViewData["Mensaje"]
+    </div>
+
+    <a href="@Url.Action("Registro","Acceso")">Registrate</a>
+
+
+</body>
+</html>

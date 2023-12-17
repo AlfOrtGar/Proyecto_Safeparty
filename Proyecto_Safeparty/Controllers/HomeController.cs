@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Proyecto_Safeparty.Models;
+using Proyecto_Safeparty.Permissions;
 using System.Diagnostics;
 
 namespace Proyecto_Safeparty.Controllers
@@ -19,7 +20,7 @@ namespace Proyecto_Safeparty.Controllers
             //LLamada a modelo
             return View();
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
