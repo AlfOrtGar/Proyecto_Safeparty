@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Página de Registro</title>
     <!-- Hojas de estilos -->
-    <link rel="stylesheet" href="styles.css"/> <!-- común -->
+    <link rel="stylesheet" href="../wwwroot/css/site.css"/> <!-- común -->
     <link rel="stylesheet" href="~/css/index.css" /> <!-- específico -->
     <link rel="icon" href="~/lib/favicon_io/favicon-32x32.png" type="image/x-icon">
     <script src="scripts.js" defer></script>
@@ -23,12 +23,11 @@
     <div class="container-fluid">
         <div class="row"> 
             <div class="col-md-6">
-                <h1 class="titulo"> Bienvenido a Safeparty </h1>
+                <h2 class="titulo"> Bienvenido a Safeparty @ViewData["Nombre"]</h2>
                 <h3 class="subtituloA" id="uno"> Encárgate de</h3>
                 <h2 class="subtituloB" id="dos"> disfrutar,</h2>
                 <h3 class="subtituloA" id="tres"> nosotros hacemos el</h3>
                 <h2 class="subtituloB" id="cuatro"> resto, </h2>
-                <h2>@ViewData["Nombre"]</h2>
             </div>
             <div class="col-md-6" id="botonesCaja">
                 <div class="wrapper">

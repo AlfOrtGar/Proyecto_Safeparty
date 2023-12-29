@@ -2,7 +2,7 @@
 function initMap() {
 
     // 1. Inicia el mapa 
-    const Madrid = { lat: 40.34, lng: -3.74 };
+    const Madrid = { lat: 40.4596, lng: -3.690069 };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
         center: Madrid,
