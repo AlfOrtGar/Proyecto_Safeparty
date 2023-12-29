@@ -22,9 +22,10 @@ function initMap() {
             "<p>" + discoteca.address + "</p>" +
             "<h3> Valoración: " + discoteca.valoration + "</h3>" +
             "<h4> Teléfono: " + discoteca.phone + "</h4>" +
-            "<h4> ID:" + discoteca.id + "</h4>" +
-            "<a href=https://safeparty.com/" + discoteca.id + "> Ver más en Safeparty </a>"
-        "</div>" +
+            '<form action=Local method=&quot;POST&quot;>' +
+            '<input type="text" name="id_local" value="' + discoteca.id + '" readonly/>' +
+            '<button type="submit">Ver más en Safeparty</button></form>' +
+            "</div>" +
             "</div>";
 
         const infowindow = new google.maps.InfoWindow({

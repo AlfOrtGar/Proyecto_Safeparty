@@ -11,6 +11,7 @@ namespace Proyecto_Safeparty.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        List<Critica> criticas = new List<Critica>();
 
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
@@ -71,38 +72,56 @@ namespace Proyecto_Safeparty.Controllers
         }
 
 
-        /*[HttpPost]
-        public ActionResult MapaLocales(int id)
+        [HttpPost]
+        public ActionResult Local(int id_local)
         {
+            cargaCriticas(id_local);
+            var establecimiento = new Local();
             var conexion = new MySql.Data.MySqlClient.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
 
             try
             {
-                String MySQLQueryInsert = "INSERT INTO locales_sf (id_usuario,nombre,valoracion,direccion,etiquetas) VALUES (0,@nombre,@valoracion,@direccion,0);";
-                String MySQLQuerySelect = "SELECT * FROM locales_sf WHERE id = @id;";
+                String MySQLQuery = "SELECT * FROM locales_sf WHERE id_local = @id;";
 
-                using (var consulta = new MySqlCommand(MySQLQuerySelect, conexion))
+                using (var consulta = new MySqlCommand(MySQLQuery, conexion))
                 {
+                    conexion.Open();
+                    consulta.Parameters.Add(new MySqlParameter("id", id_local));
+                    var lector = consulta.ExecuteReader();
 
+                    while(lector.Read())
+                    {
+                        establecimiento.nombre = lector["nombre"].ToString();
+                        establecimiento.valoracion = (int) lector["valoracion"];
+                        establecimiento.direccion = lector["direccion"].ToString();
+                    }
+
+                    conexion.Close();
                 }
 
-                using (var consulta = new MySqlCommand(MySQLQueryInsert,conexion))
-                {
-
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return View();
             }
-            
-        }*/
 
-        [HttpPost]
-        public ActionResult getReviews(int id_local)
+            var resultado = new DatoCompuesto()
+            {
+                establecimiento = establecimiento,
+                comentario = criticas
+            };
+
+            return View(resultado);
+        }
+
+        public void cargaCriticas(int id_local)
         {
             var conexion = new MySql.Data.MySqlClient.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+
+            if (criticas.Count > 0)
+            {
+                criticas.Clear();
+            }
 
             try
             {
@@ -110,15 +129,27 @@ namespace Proyecto_Safeparty.Controllers
 
                 using (var consulta = new MySqlCommand(MySQLQuery, conexion))
                 {
+                    conexion.Open();
                     consulta.Parameters.Add(new MySqlParameter("local", id_local));
+                    var lector = consulta.ExecuteReader();
+
+                    while(lector.Read())
+                    {
+                        criticas.Add(new Critica()
+                        {
+                            username = lector["username"].ToString(),
+                            valoracion = (int)lector["valoracion"],
+                            texto = lector["texto"].ToString()
+                        }) ;
+                    }
+
+                    conexion.Close();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-
-            return View();
         }
 
     }
