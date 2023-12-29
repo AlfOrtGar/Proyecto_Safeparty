@@ -1,17 +1,35 @@
-﻿/*
- * Always set the map height explicitly to define the size of the div element
- * that contains the map.
- */
-#map {
+﻿
+:fullscreen {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     height: 100%;
 }
 
-/*
- * Optional: Makes the sample page fill the window.
- */
-html,
-body {
+#map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    height: 1000px;
+}
+
+html {
+    background-color: aquamarine;
+}
+
+div#content {
+    background-color: rgba(121, 9, 5, 0.205);
+    line-height: 16px;
 }
