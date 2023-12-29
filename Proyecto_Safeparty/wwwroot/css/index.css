@@ -29,6 +29,7 @@ footer {
     position: sticky;
     bottom: 0;
 }
+
 a {
     display: block;
     width: 200px;
@@ -45,33 +46,29 @@ a {
     transition: all .35s;
 }
 
-    a span {
-        position: relative;
-        z-index: 2;
-    }
+a span {
+    position: relative;
+    z-index: 2;
+}
 
-    a:after {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: #ff003b;
-        transition: all .35s;
-    }
+a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all .35s;
+}
 
-    a:hover {
-        color: #fff;
-    }
+a:hover {
+    color: #fff;
+}
 
-        a:hover:after {
-            width: 100%;
-        }
-
-
-
-
+a:hover:after {
+    width: 100%;
+}
 
 h2 {
     font-family: CooperhewittLightItalic;
