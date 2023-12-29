@@ -22,7 +22,7 @@ function initMap() {
             "<p>" + discoteca.address + "</p>" +
             "<h3> Valoración: " + discoteca.valoration + "</h3>" +
             "<h4> Teléfono: " + discoteca.phone + "</h4>" +
-            '<form action=Local method=&quot;POST&quot;>' +
+            '<form action=Local method=POST>' +
             '<input type="text" name="id_local" value="' + discoteca.id + '" readonly/>' +
             '<button type="submit">Ver más en Safeparty</button></form>' +
             "</div>" +

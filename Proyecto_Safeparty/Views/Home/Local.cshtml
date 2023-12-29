@@ -1,6 +1,13 @@
 ﻿@model Proyecto_Safeparty.Models.DatoCompuesto
 @{
-    ViewData["Title"] = Model.establecimiento.nombre;
+    try
+    {
+        ViewData["Title"] = Model.establecimiento.nombre;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.ToString());
+    }
 }
 
 <!DOCTYPE html>
@@ -8,10 +15,29 @@
 <body>
     @ViewData["Title"]
 
-    <h3>Direccion : </h3>
+    <h3>Direccion : @Model.establecimiento.direccion</h3>
 
-    <!-- Seccion de comentarios -->
-    <!-- Foreach -->
+    <p>Esto es el texto</p>
+    <p>@Model.establecimiento.valoracion</p>
+
+    <table>
+        @{
+            foreach (var comentario in Model.comentario)
+            {
+                <tr>
+                    <th>@comentario.username</th>
+                    <th>@comentario.valoracion</th>
+                    <th>@comentario.texto</th>
+                </tr>
+            }
+        }
+    </table>
+    
+    <form action="@Url.Action("Comenta","Home")" method="GET">
+        <input type="hidden" name="id_local" value=@Model.establecimiento.id_local />
+        <button type="submit">Deja un comentario</button>
+    </form>
+
 
 </body>
 </html>

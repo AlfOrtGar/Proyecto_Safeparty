@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form action="@Url.Action("Comenta","Home")" method="POST">
+
+        <input type="hidden" name="id_local" value=@ViewData["id_local"] />
+        <input type="hidden" name="username" value=@ViewData["Nombre"] />
+
+        <label>Valoracion</label>
+        <input type="number" name="valoracion" required />
+
+        <label>Comentario</label>
+        <input type="text" name="texto" required />
+
+        <button type="submit">Deja tu comentario</button>
+    </form>
+
+    <div class="alert alert-danger" role="alert">
+        @ViewData["Mensaje"]
+    </div>
+
+    <form action="@Url.Action("Local","Home")" method="POST">
+        <input type="hidden" name="id_local" value=@ViewData["id_local"] />
+        <button type="submit">Volver a la vista del local</button>
+    </form>
+
+</body>
+</html>

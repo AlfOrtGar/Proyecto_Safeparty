@@ -63,6 +63,18 @@ namespace Proyecto_Safeparty.Controllers
             return RedirectToAction("Login", "Acceso");
         }
 
+        public IActionResult Local()
+        {
+            return View();
+        }
+
+        public IActionResult Comenta(int id_local)
+        {
+            ViewData["Nombre"] = _httpContextAccessor.HttpContext.Session.GetString("Username");
+            ViewData["id_local"] = id_local;
+            return View();
+        }
+
         // --- FIN Vistas ---------------------------------------------------------
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -77,6 +89,7 @@ namespace Proyecto_Safeparty.Controllers
         {
             cargaCriticas(id_local);
             var establecimiento = new Local();
+            establecimiento.id_local = id_local;
             var conexion = new MySql.Data.MySqlClient.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
 
             try
@@ -150,6 +163,38 @@ namespace Proyecto_Safeparty.Controllers
             {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        [HttpPost]
+        public ActionResult Comenta(Critica critica)
+        {
+            var conexion = new MySql.Data.MySqlClient.MySqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            critica.texto.Trim();
+
+            try
+            {
+                String MySQLQuery = "INSERT INTO criticas_sf (username,id_local,valoracion,texto) VALUES (@username,@id,@valoracion,@texto);";
+                using (var consulta = new MySqlCommand(MySQLQuery, conexion))
+                {
+                    consulta.Parameters.Add(new MySqlParameter("id", critica.id_local));
+                    consulta.Parameters.Add(new MySqlParameter("username", critica.username));
+                    consulta.Parameters.Add(new MySqlParameter("valoracion", critica.valoracion));
+                    consulta.Parameters.Add(new MySqlParameter("texto", critica.texto));
+
+                    conexion.Open();
+                    consulta.ExecuteNonQuery();
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            ViewData["Nombre"] = _httpContextAccessor.HttpContext.Session.GetString("Username");
+            ViewData["id_local"] = critica.id_local;
+            ViewData["Mensaje"] = "Se ha introducido el comentario correctamente";
+            return View();
         }
 
     }
