@@ -8,5 +8,8 @@
         public int valoracion { get; set; }
         public string direccion { get; set; }
         public string etiquetas { get; set; }
+        public string descripcion { get; set; }
+        public float longitud {  get; set; }
+        public float latitud { get; set; }
     }
 }
