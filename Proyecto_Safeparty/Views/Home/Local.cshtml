@@ -13,9 +13,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <link rel="stylesheet" href="../wwwroot/css/local.css" /><!-- especifico -->
+    <link rel="stylesheet" href="../wwwroot/css/descripcionlocal.css" /><!-- especifico -->
     <link rel="stylesheet" href="../wwwroot/css/site.css" /><!-- común -->
-    <link rel=""/>
     </head>
 <body>
     <h1 id="tituloLocal"> @ViewData["Title"] </h1>
@@ -26,7 +25,7 @@
     <h2 id="posicionLocal">Descripción: </h2>
     <p>@Model.establecimiento.descripcion</p>
 
-    <table>
+    <table id="tablaLocales">
         <tbody>
         <tr>
             <th> Usuario </th>
