@@ -18,6 +18,14 @@ html {
     font-family: "CooperhewittBold";
     src: url("https://github.com/cooperhewitt/cooperhewitt-typeface/tree/master/files/CooperHewitt-Bold.ufo");
 }
+
+/*
+#Carta{
+    background-color:green;
+    align-items:center;
+}
+*/
+
 a, button {
     display: block;
     width: 200px;

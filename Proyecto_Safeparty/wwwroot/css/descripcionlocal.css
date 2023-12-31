@@ -1,6 +1,4 @@
-﻿@import bootstrap
-
-table, tbody {
+﻿table, tbody {
     font-family: 'Berlin Sans FB';
     border-collapse: collapse;
     width: 100%;
@@ -11,11 +9,14 @@ table, tbody {
 table#tablaLocales {
     background-color: white;
 }
+
+/*
 div {
     padding: 35px;
     background-image: linear-gradient(to bottom, rgba(240, 255, 40, 1) 0%, rgba(240, 255, 40, 1) 100%), linear-gradient(to bottom, rgba(240, 40, 40, 1) 0%, rgba(240, 40, 40, 1) 100%);
     background-clip: content-box, padding-box;
 }
+*/
 
 td, th, tr {
     border: 1px solid #dddddd;
