@@ -11,12 +11,12 @@
         <input type="hidden" name="username" value=@ViewData["Nombre"] />
         <div id="cajaComentario">
         <label>Valoracion</label>
-        <input type="number" name="valoracion" required />
+        <input id="valoracion" type="number" name="valoracion" min="1" max="5" required />
 
         <label>Comentario</label>
-        <input type="text" name="texto" required />
+        <input id="cajaTexto" type="text" name="texto" required />
         </div>
-        <button type="submit">Deja tu comentario</button>
+        <button type="submit"> Publicar </button>
     </form>
 
     <div class="alert alert-danger" role="alert">
@@ -25,7 +25,7 @@
 
     <form action="@Url.Action("Local","Home")" method="POST">
         <input type="hidden" name="id_local" value=@ViewData["id_local"] />
-        <button type="submit">Volver a la vista del local</button>
+        <button type="submit">Volver al local</button>
     </form>
 
 </body>

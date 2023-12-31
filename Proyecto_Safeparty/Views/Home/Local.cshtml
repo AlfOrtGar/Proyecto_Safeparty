@@ -13,34 +13,42 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <link rel="stylesheet" href="../wwwroot/css/site.css" /> <!-- común -->
-    <link rel="stylesheet" href="../wwwroot/css/local.css" />
+    <link rel="stylesheet" href="../wwwroot/css/local.css" /><!-- especifico -->
+    <link rel="stylesheet" href="../wwwroot/css/site.css" /><!-- común -->
+    <link rel=""/>
     </head>
 <body>
-    @ViewData["Title"]
-
-    <h3>Direccion : @Model.establecimiento.direccion</h3>
-
-    <p>Puntuacion: @Model.establecimiento.valoracion</p>
-    <p>Aqui va el texto</p>
+    <h1 id="tituloLocal"> @ViewData["Title"] </h1>
+    <div>
+    <h2 id="posicionLocal">Direccion: @Model.establecimiento.direccion</h2>
+    <div>
+    <h2 id="posicionLocal">Puntuacion: @Model.establecimiento.valoracion</h2>
+    <h2 id="posicionLocal">Descripción: </h2>
     <p>@Model.establecimiento.descripcion</p>
 
     <table>
+        <tbody>
+        <tr>
+            <th> Usuario </th>
+            <th> Valoración </th>
+            <th> Comentario </th>
+        </tr>
         @{
             foreach (var comentario in Model.comentario)
             {
                 <tr>
-                    <th>@comentario.username</th>
-                    <th>@comentario.valoracion</th>
-                    <th>@comentario.texto</th>
+                    <td>@comentario.username </td>
+                    <td>@comentario.valoracion</td>
+                    <td>@comentario.texto</td>
                 </tr>
             }
         }
+        </tbody>
     </table>
     
     <form action="@Url.Action("Comenta","Home")" method="GET">
         <input type="hidden" name="id_local" value=@Model.establecimiento.id_local />
-        <button type="submit">Deja un comentario</button>
+        <button type="submit"> Comenta </button>
     </form>
 
 

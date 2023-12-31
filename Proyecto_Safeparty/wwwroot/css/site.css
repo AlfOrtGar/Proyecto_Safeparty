@@ -18,7 +18,7 @@ html {
     font-family: "CooperhewittBold";
     src: url("https://github.com/cooperhewitt/cooperhewitt-typeface/tree/master/files/CooperHewitt-Bold.ufo");
 }
-a {
+a, button {
     display: block;
     width: 200px;
     height: 40px;
@@ -34,12 +34,12 @@ a {
     transition: all .35s;
 }
 
-    a span {
+    a span, button span {
         position: relative;
         z-index: 2;
     }
 
-    a:after {
+    a:after, button:after {
         position: absolute;
         content: "";
         top: 0;
@@ -50,11 +50,11 @@ a {
         transition: all .35s;
     }
 
-    a:hover {
-        color: #fff;
+    a:hover, button:hover {
+        color: rgba(255, 0, 0, 0.8);
     }
 
-        a:hover:after {
+        a:hover:after, button:hover:after {
             width: 100%;
         }
 
@@ -108,6 +108,10 @@ body {
     margin-top: 20px;
 }
 
+div.container {
+    margin-top: 10px;
+}
+
 .footer {
     background-color: #ffffff; /* Color de fondo del pie de página */
     color: white; /* Color del texto del pie de página */
@@ -116,6 +120,12 @@ body {
     align-items: center;
     justify-content: center;
     bottom: 0;
+}
+
+footer.border-top.footer.text-muted {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-family: 'Berlin Sans FB';
 }
 /*
     OTRAS COSAS

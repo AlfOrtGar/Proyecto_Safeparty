@@ -45,7 +45,7 @@ input {
     box-sizing: border-box;
 }
 
-button {
+/*button {
     background-color: #4caf50;
     color: white;
     padding: 10px 15px;
@@ -53,10 +53,10 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-}
+}*/
 
     button:hover {
-        background-color: #45a049;
+        background-color: darkred;
     }
 
 header {
@@ -79,7 +79,7 @@ h1#titulo {
     text-align: center;
 }
 
-div#alerta {
+div.alert.alert-danger {
     margin-left: 25vw;
     margin-right: 2px;
     margin-top: auto 5px;
@@ -89,6 +89,16 @@ div#alerta {
     height: 25px;
 }
 
-    div#alerta.alert.alert-danger:empty {
+    div.alert.alert-danger:empty {
         visibility: hidden;
     }
+
+div.container {
+    margin-top: 10px;
+}
+
+a#redireccion, a.redireccion {
+    margin-left: 25vw;
+    width: 500px;
+    font-family: 'Berlin Sans FB';
+}
