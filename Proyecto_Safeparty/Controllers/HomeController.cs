@@ -107,6 +107,9 @@ namespace Proyecto_Safeparty.Controllers
                         establecimiento.nombre = lector["nombre"].ToString();
                         establecimiento.valoracion = (int) lector["valoracion"];
                         establecimiento.direccion = lector["direccion"].ToString();
+                        establecimiento.descripcion = lector["descripcion"].ToString();
+                        establecimiento.longitud = (float) lector["longitud"];
+                        establecimiento.latitud = (float) lector["latitud"];
                     }
 
                     conexion.Close();
