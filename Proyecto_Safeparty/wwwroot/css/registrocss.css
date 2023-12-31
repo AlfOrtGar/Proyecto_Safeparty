@@ -29,26 +29,19 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
-    width: 300px;
-    text-align: center;
+    width: 500px;
+    margin-left: 25vw;
 }
 
 label {
     display: block;
-    margin: 1px 0;
+    margin: 1px;
 }
 
 input {
-    width: 100%;
-    padding: 3px;
-    margin-bottom: 1px;
-    box-sizing: border-box;
-}
-
-select {
-    width: 100%;
-    padding: 3px;
-    margin-bottom: 1px;
+    width: 90%;
+    padding: 2px;
+    margin-bottom: 5px;
     box-sizing: border-box;
 }
 
@@ -74,26 +67,28 @@ a#registro {
     background-color: white;
     font-family: 'Berlin Sans FB';
     font-size: 25px;
-    margin-left: -5vw;
+    margin-left: 25vw;
+    width: 500px;
+    height: 40px;
 }
 
 h1#titulo {
     font-family: CooperhewittBold;
-    font-size: 3vw;
-    margin-left: -50vw;
+    font-size: 30px;
+    margin-left: 7vw;
     text-align: center;
 }
 
 div#alerta {
-    margin-left: 2px;
+    margin-left: 25vw;
     margin-right: 2px;
     margin-top: auto 5px;
     background-color: white;
     text-align: center;
-    width: 100%;
-    height: 20px;
+    width: 500px;
+    height: 25px;
 }
 
-    div#alerta:empty {
+    div#alerta.alert.alert-danger:empty {
         visibility: hidden;
     }

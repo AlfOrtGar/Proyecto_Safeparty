@@ -2,19 +2,20 @@
 <html lang="en">
     <head>
     <link rel="stylesheet" href="../wwwroot/css/site.css" /> <!-- común -->
+    <link rel="stylesheet" href="~/css/comentario.css" />
     </head>
 <body>
     <form action="@Url.Action("Comenta","Home")" method="POST">
 
         <input type="hidden" name="id_local" value=@ViewData["id_local"] />
         <input type="hidden" name="username" value=@ViewData["Nombre"] />
-
+        <div id="cajaComentario">
         <label>Valoracion</label>
         <input type="number" name="valoracion" required />
 
         <label>Comentario</label>
         <input type="text" name="texto" required />
-
+        </div>
         <button type="submit">Deja tu comentario</button>
     </form>
 
