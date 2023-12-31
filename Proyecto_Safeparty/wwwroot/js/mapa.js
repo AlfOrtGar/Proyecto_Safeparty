@@ -6,6 +6,7 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
         center: Madrid,
+        mapId: "87a6e66687bbe629",
     });
 
 
@@ -23,7 +24,6 @@ function initMap() {
             "<h3> Valoración: " + discoteca.valoration + "</h3>" +
             "<h4> Teléfono: " + discoteca.phone + "</h4>" +
             '<form action=Local method=POST>' +
-            '<input type="text" name="id_local" value="' + discoteca.id + '" readonly/>' +
             '<button type="submit">Ver más en Safeparty</button></form>' +
             "</div>" +
             "</div>";

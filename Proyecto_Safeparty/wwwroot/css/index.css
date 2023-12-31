@@ -19,16 +19,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-footer {
-    background-color: #333; /* Color de fondo del pie de página */
-    color: white; /* Color del texto del pie de página */
-    height: 40px; /* Altura del pie de página */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    bottom: 0;
-}
+
 
 a {
     display: block;
@@ -78,7 +69,8 @@ h2 {
 
 h1.titulo {
     font-family: Bagnard;
-    font-size: 4vw;
+    font-size: 3vw;
+    line-height: 8px;
 }
 
 h3 {

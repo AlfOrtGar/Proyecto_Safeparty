@@ -71,13 +71,13 @@ body {
 }
 
 .footer {
-    position: fixed;
-    left: 0;
+    background-color: #ffffff; /* Color de fondo del pie de página */
+    color: white; /* Color del texto del pie de página */
+    height: 40px; /* Altura del pie de página */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
 }
 /*
     OTRAS COSAS

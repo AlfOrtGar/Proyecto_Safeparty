@@ -1,5 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Login </title>
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="../wwwroot/css/site.css" /> <!-- común -->
+    <link rel="stylesheet" href="~/css/registrocss.css" /> <!-- específico -->
+    <link rel="icon" href="~/lib/favicon_io/favicon-32x32.png" type="image/x-icon">
+    <script src="scripts.js" defer></script> <!-- Mirar este -->
+</head>
 <body>
     <form action="@Url.Action("Registro","Acceso")" method="POST">
 
@@ -12,8 +26,12 @@
         <label>Fecha de nacimiento</label>
         <input type="date" name="fecha_nacimiento" required/>
 
-        <label>Genero</label>
-        <input type="text" name="genero" required/>
+        <label for="genero">Genero</label>
+        <select name="genero" id="genero" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+        </select>
 
         <label>Username</label>
         <input type="text" name="username" required/>

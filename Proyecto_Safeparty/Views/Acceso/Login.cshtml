@@ -1,5 +1,20 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Login </title>
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="../wwwroot/css/site.css" /> <!-- común -->
+    <link rel="stylesheet" href="~/css/login.css" /> <!-- específico -->
+    <link rel="icon" href="~/lib/favicon_io/favicon-32x32.png" type="image/x-icon">
+    <script src="scripts.js" defer></script> <!-- Mirar este -->
+</head>
+<h1 id="titulo"> Estás a un paso de la diversión, ¿a qué esperas? </h1>
 <body>
     <form action="@Url.Action("Login","Acceso")" method="POST">
         <label>Username</label>
@@ -11,11 +26,11 @@
         <button type="submit">Login</button>
     </form>
 
-    <div class="alert alert-danger" role="alert">
+    <div id="alerta" class="alert alert-danger" role="alert">
         @ViewData["Mensaje"]
     </div>
 
-    <a href="@Url.Action("Registro","Acceso")">Registrate</a>
+    <a id="registro" href="@Url.Action("Registro","Acceso")"> ¿No tienes cuenta? ¡Hazte una ya! </a>
 
 
 </body>
