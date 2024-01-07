@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="~/css/site.css" /><!-- común -->
     </head>
 <body>
+    <div class="circulo" id="uno"></div>
+    <div class="circulo" id="dos"></div>
+    <div class="circulo" id="tres"></div>
+    <div class="circulo" id="cuatro"></div>
+    <div class="circulo" id="cinco"></div>
+    <div class="circulo" id="seis"></div>
+    <div class="circulo" id="siete"></div>
+    <div class="circulo" id="ocho"></div>
     <h1 id="tituloLocal"> @ViewData["Title"] </h1>
     <div>
     <h2 id="posicionLocal">Direccion: @Model.establecimiento.direccion</h2>
@@ -25,25 +33,27 @@
     <h2 id="posicionLocal">Descripción: </h2>
     <p>@Model.establecimiento.descripcion</p>
 
-    <table id="tablaLocales">
-        <tbody>
-        <tr>
-            <th> Usuario </th>
-            <th> Valoración </th>
-            <th> Comentario </th>
-        </tr>
-        @{
-            foreach (var comentario in Model.comentario)
-            {
-                <tr>
-                    <td>@comentario.username </td>
-                    <td>@comentario.valoracion</td>
-                    <td>@comentario.texto</td>
-                </tr>
-            }
-        }
-        </tbody>
-    </table>
+    <!-- aqui -->
+            <table id="tablaLocales">
+                <tbody>
+                    <tr>
+                        <th> Usuario </th>
+                        <th> Valoración </th>
+                        <th> Comentario </th>
+                    </tr>
+                    @{
+                        foreach (var comentario in Model.comentario)
+                        {
+                            <tr>
+                                <td>@comentario.username </td>
+                                <td>@comentario.valoracion</td>
+                                <td>@comentario.texto</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+    <!-- aqui -->
     
     <form action="@Url.Action("Comenta","Home")" method="GET">
         <input type="hidden" name="id_local" value=@Model.establecimiento.id_local />

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Página de registro";
+    ViewData["Title"] = "Home";
 }
 
 <!DOCTYPE html>
@@ -19,19 +19,20 @@
     
 </head>
 <body>
-
     <div class="container-fluid">
         <div class="row"> 
             <div class="col-md-6">
-                <h2 class="titulo"> Bienvenido a Safeparty @ViewData["Nombre"]</h2>
+                <h2 class="titulo"> Bienvenido a Safeparty<b>"@ViewData["Nombre"]"</b></h2>
+                <a id="botonEspecial" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Mapa">Buscar en el mapa</a>
                 <div id="separaciones">
-                <h3 class="subtituloA" id="uno"> Encárgate de</h3>
-                <h2 class="subtituloB" id="dos"> disfrutar,</h2>
-                <h3 class="subtituloA" id="tres"> nosotros hacemos el</h3>
-                <h2 class="subtituloB" id="cuatro"> resto. </h2>
+                <h3 class="subtituloA" id="unoIndex"> Encárgate de</h3>
+                <h2 class="subtituloB" id="dosIndex"> disfrutar,</h2>
+                <h3 class="subtituloA" id="tresIndex"> nosotros hacemos el</h3>
+                <h2 class="subtituloB" id="cuatroIndex"> resto. </h2>
                 </div>
             </div>
-            <div class="col-md-6" id="botonesCaja">
+            <div class="col-md-6">
+                <div id="ofertaSemanal">
                     <h3 class="subtituloC"> ¡Oferta de la semana! </h3>
                     <img src="~/lib/pictures/oferta-semana.jpg"/> 
                     <h3 class="subtituloD"> Los Punsetes + Menta en La Riviera</h3>
@@ -40,6 +41,14 @@
             </div>
         </div>
     </div>
+    <div class="circulo" id="uno"></div>
+    <div class="circulo" id="dos"></div>
+    <div class="circulo" id="tres"></div>
+    <div class="circulo" id="cuatro"></div>
+    <div class="circulo" id="cinco"></div>
+    <div class="circulo" id="seis"></div>
+    <div class="circulo" id="siete"></div>
+    <div class="circulo" id="ocho"></div>
 
 </body>
 </html>
