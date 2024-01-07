@@ -1,6 +1,3 @@
-
-<!-- para -->
-
 html {
   font-size: 10px;
 }
@@ -210,6 +207,12 @@ footer.border-top.footer.text-muted {
 #logoHeader {
     width: 38px;
     height: 38px;
+}
+
+div#cometario {
+    background-color: white;
+    margin-bottom: 2%;
+    border: solid 1px black;
 }
 
 /*

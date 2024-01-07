@@ -18,7 +18,7 @@ div {
 }
 */
 
-td, th, tr {
+th, tr {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -43,4 +43,23 @@ h2#posicionLocal {
 h2#textoLocal {
     font-family: 'Berlin Sans FB';
     font-size: 30px;
+}
+
+#cometario {
+    background-color: white;
+    margin-bottom: 2%;
+    border: solid 1px black;
+}
+
+#cartita {
+    padding: 2%;
+    background-color:rgba(172, 137, 239, 0.50);
+}
+
+img {
+    width:1vw;
+}
+
+.profilepic {
+    width:3vw;
 }

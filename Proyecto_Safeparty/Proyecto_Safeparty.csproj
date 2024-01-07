@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="wwwroot\lib\pictures\Users\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -13,8 +13,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <link rel="stylesheet" href="~/css/descripcionlocal.css" /><!-- especifico -->
     <link rel="stylesheet" href="~/css/site.css" /><!-- común -->
+    <link rel="stylesheet" href="~/css/descripcionlocal.css" /><!-- especifico -->
+    <style>
+        div#comentario {
+            background-color: white;
+            margin-bottom: 2%;
+            border: solid 1px black;
+        }
+    </style>
     </head>
 <body>
     <div class="circulo" id="uno"></div>
@@ -25,41 +32,53 @@
     <div class="circulo" id="seis"></div>
     <div class="circulo" id="siete"></div>
     <div class="circulo" id="ocho"></div>
-    <h1 id="tituloLocal"> @ViewData["Title"] </h1>
-    <div>
-    <h2 id="posicionLocal">Direccion: @Model.establecimiento.direccion</h2>
-    <div>
-    <h2 id="posicionLocal">Puntuacion: @Model.establecimiento.valoracion</h2>
-    <h2 id="posicionLocal">Descripción: </h2>
-    <p>@Model.establecimiento.descripcion</p>
 
-    <!-- aqui -->
-            <table id="tablaLocales">
-                <tbody>
-                    <tr>
-                        <th> Usuario </th>
-                        <th> Valoración </th>
-                        <th> Comentario </th>
-                    </tr>
-                    @{
-                        foreach (var comentario in Model.comentario)
-                        {
-                            <tr>
-                                <td>@comentario.username </td>
-                                <td>@comentario.valoracion</td>
-                                <td>@comentario.texto</td>
-                            </tr>
-                        }
-                    }
-                </tbody>
-            </table>
-    <!-- aqui -->
+    <div id="cartita">
+        <h1 id="tituloLocal"> @ViewData["Title"] </h1>
+
+        <h2 id="posicionLocal">Direccion: @Model.establecimiento.direccion</h2>
+
+        <h2 id="posicionLocal">Puntuacion: @Model.establecimiento.valoracion</h2>
+
+        <h2 id="posicionLocal">Descripción: </h2>
+        <p>@Model.establecimiento.descripcion</p>
+
+        @{
+            foreach (var comentario in Model.comentario)
+            {
+                String link = "../lib/pictures/Users/" + @comentario.username + ".png";
+                <div id="comentario">
+                    <table id="tablaLocales">
+                        <tr>
+                            <td>
+                                <img class="profilepic" src=@link alt="../lib/pictures/Users/Default.png"/>
+                                <p>@comentario.username</p>
+                                @{
+                                    for(int i = 0; i < 5; i++)
+                                    {
+                                        if (@comentario.valoracion <= i)
+                                        {
+                                            <img src="~/lib/pictures/estrella-bn.png" />
+                                        }
+                                        else
+                                        {
+                                            <img src="~/lib/pictures/estrella-color.png" />
+                                        }
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                    <p>@comentario.texto</p>
+                </div>
+            }
+        }
+
+        <form action="@Url.Action("Comenta","Home")" method="GET">
+            <input type="hidden" name="id_local" value=@Model.establecimiento.id_local />
+            <button type="submit"> Comenta </button>
+        </form>
+    </div>
     
-    <form action="@Url.Action("Comenta","Home")" method="GET">
-        <input type="hidden" name="id_local" value=@Model.establecimiento.id_local />
-        <button type="submit"> Comenta </button>
-    </form>
-
-
 </body>
 </html>
