@@ -21,6 +21,28 @@
             margin-bottom: 2%;
             border: solid 1px black;
         }
+        td.cabeceraComentario {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .cabeceraComentario * {
+            padding-right: 1vw;
+        }
+        .cabeceraComentario p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 150%;
+        }
+        #comentario p {
+            margin-bottom:0;
+        }
+        #suelto {
+            padding: 1vw;
+        }
     </style>
     </head>
 <body>
@@ -50,7 +72,7 @@
                 <div id="comentario">
                     <table id="tablaLocales">
                         <tr>
-                            <td>
+                            <td class="cabeceraComentario">
                                 <img class="profilepic" src=@link alt="../lib/pictures/Users/Default.png"/>
                                 <p>@comentario.username</p>
                                 @{
@@ -69,7 +91,7 @@
                             </td>
                         </tr>
                     </table>
-                    <p>@comentario.texto</p>
+                    <p id="suelto">@comentario.texto</p>
                 </div>
             }
         }
